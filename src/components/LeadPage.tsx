@@ -1,24 +1,26 @@
-import React, { useLayoutEffect } from "react";
+import React, { useLayoutEffect, useState } from "react";
 import LeadTable from './LeadTable';
 import '../App.css';
 import getLeads from "../services/LeadService";
-const leads = [
-  {
-      id: 1,
-      companyName: "IHS Market",
-      contactName: "Ryan Schleich",
-      email: "ryan.dines@gmail.com",
-      description: "ASP.NET Core and React",
-      notes: "Full stack is cool, pay is about $100k.  Requires a technical test that should be sent 11/30/2020"
-  }
-];
+// const leads = [
+//   {
+//       id: 1,
+//       companyName: "IHS Market",
+//       contactName: "Ryan Schleich",
+//       email: "ryan.dines@gmail.com",
+//       description: "ASP.NET Core and React",
+//       notes: "Full stack is cool, pay is about $100k.  Requires a technical test that should be sent 11/30/2020"
+//   }
+// ];
 
 const LeadPage = () => {
+
+  const [leads, setLeads] = useState([]);
 
     useLayoutEffect(() => {
       getLeads().then(data=>{
         console.log("Component receives data", data);
-
+        setLeads(data);
       });
       return () => {
         console.log("Component loses scope");
