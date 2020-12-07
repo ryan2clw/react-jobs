@@ -1,16 +1,7 @@
 import * as React from 'react';
 import { DataGrid, ColDef } from '@material-ui/data-grid';
 
-const leads = [
-    {
-        id: 1,
-        companyName: "IHS Market",
-        contactName: "Ryan Schleich",
-        email: "ryan.dines@gmail.com",
-        description: "ASP.NET Core and React",
-        notes: "Full stack is cool, pay is about $100k.  Requires a technical test that should be sent 11/30/2020"
-    }
-];
+
 const columns: ColDef[] = [
     {
         field: 'companyName',
@@ -38,10 +29,18 @@ const columns: ColDef[] = [
         width: 400
     }
 ];
-const LeadTable = () => {
+// interface IData {
+//     company_name: string,
+//     contact_name: string,
+//     description: string,
+//     email: string,
+//     notes: string
+// }
+// @ts-ignore
+const LeadTable = ({data}) => {
     return (
         <div style={{ height: 400, width: '100%', color: 'white !important', textAlign: 'left' }}>
-          <DataGrid rows={leads} columns={columns} pageSize={5} checkboxSelection />
+          <DataGrid rows={data} columns={columns} pageSize={5} checkboxSelection />
         </div>
       );
 }
