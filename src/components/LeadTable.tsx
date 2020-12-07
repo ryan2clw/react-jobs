@@ -4,12 +4,12 @@ import { DataGrid, ColDef } from '@material-ui/data-grid';
 
 const columns: ColDef[] = [
     {
-        field: 'companyName',
+        field: 'company_name',
         headerName: 'COMPANY',
         width: 180
     }, 
     {
-        field: 'contactName',
+        field: 'contact_name',
         headerName: 'CONTACT',
         width: 150
     }, 
