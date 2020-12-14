@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { DataGrid, ColDef } from '@material-ui/data-grid';
+import { withStyles } from '@material-ui/core';
 
 
 const columns: ColDef[] = [
@@ -9,13 +10,13 @@ const columns: ColDef[] = [
         width: 180
     }, 
     {
-        field: 'contact_name',
-        headerName: 'CONTACT',
+        field: 'median_salary',
+        headerName: 'SALARY',
         width: 150
     }, 
     {
-        field: 'email',
-        headerName: 'EMAIL',
+        field: 'technology',
+        headerName: 'STACK',
         width: 200
     }, 
     {
@@ -29,18 +30,17 @@ const columns: ColDef[] = [
         width: 400
     }
 ];
-// interface IData {
-//     company_name: string,
-//     contact_name: string,
-//     description: string,
-//     email: string,
-//     notes: string
-// }
+
 // @ts-ignore
 const LeadTable = ({data}) => {
     return (
-        <div style={{ height: 400, width: '100%', color: 'white !important', textAlign: 'left' }}>
-          <DataGrid rows={data} columns={columns} pageSize={5} checkboxSelection />
+        <div style={{ height: 600, width: '100%', color: 'white !important', textAlign: 'left' }}>
+          <DataGrid 
+            rows={data} 
+            columns={columns} 
+            pageSize={10} 
+            checkboxSelection
+            />
         </div>
       );
 }
