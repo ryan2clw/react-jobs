@@ -34,11 +34,11 @@ const columns: ColDef[] = [
 // @ts-ignore
 const LeadTable = ({data}) => {
     return (
-        <div style={{ height: 600, width: '100%', color: 'white !important', textAlign: 'left' }}>
+        <div style={{ height: 400, width: '100%', color: 'white !important', textAlign: 'left' }}>
           <DataGrid 
             rows={data} 
             columns={columns} 
-            pageSize={10} 
+            pageSize={5} 
             checkboxSelection
             />
         </div>
